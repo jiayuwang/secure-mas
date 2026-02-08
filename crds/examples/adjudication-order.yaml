@@ -1,0 +1,21 @@
+apiVersion: securemas.io/v1alpha1
+kind: AdjudicationOrder
+metadata:
+  name: adjudicationorder-001
+spec:
+  orderId: "c3e90d08-48c1-4d2b-9f3c-8f1f95a0b6b0"
+  eventId: "0c6b2c6a-0b2e-4d9a-a38b-4a6f4a7bcb5f"
+  taskId: "d9f9a9b4-7b6a-4d64-9b62-4d7f30b5d9f3"
+  agentId: "agent-f"
+  actions:
+    - type: "RESTRICT_EGRESS"
+      params:
+        allowHosts: ["api.internal.local"]
+    - type: "REVOKE_TOKEN"
+      params:
+        jti: "token-jti-001"
+  reason: "Policy violation confirmed"
+  issuedAt: "2025-01-01T00:01:00Z"
+  signature:
+    algorithm: "hmac-sha256"
+    value: "<base64-signature>"

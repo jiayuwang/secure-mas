@@ -1,0 +1,15 @@
+apiVersion: securemas.io/v1alpha1
+kind: SecurityEvent
+metadata:
+  name: securityevent-001
+spec:
+  eventId: "0c6b2c6a-0b2e-4d9a-a38b-4a6f4a7bcb5f"
+  taskId: "d9f9a9b4-7b6a-4d64-9b62-4d7f30b5d9f3"
+  agentId: "agent-f"
+  type: "network"
+  severity: "high"
+  confidence: 0.85
+  summary: "Unauthorized egress attempt to external host"
+  evidenceRefs: ["s3://securemas/evidence/securityevent-001.json"]
+  recommendedActions: ["RESTRICT_EGRESS", "REVOKE_TOKEN"]
+  detectedAt: "2025-01-01T00:00:00Z"

@@ -1,0 +1,24 @@
+apiVersion: securemas.io/v1alpha1
+kind: Task
+metadata:
+  name: demo-task-001
+spec:
+  taskId: "d9f9a9b4-7b6a-4d64-9b62-4d7f30b5d9f3"
+  tenantId: "tenant-001"
+  graphRef: "graphs/demo-graph:v1"
+  input:
+    params:
+      query: "find anomalies"
+  policyBundleRef: "policy-bundle:v1"
+  securityProfileRef: "tsp-basic"
+  checkpoint:
+    uri: "s3://securemas/checkpoints/demo-task-001"
+    mode: "readwrite"
+  scheduling:
+    preferredAgents: ["agent-f", "agent-g"]
+    allowFallback: true
+  timeouts:
+    executionSeconds: 900
+  annotations:
+    riskLevel: "medium"
+    dataClassification: "restricted"
