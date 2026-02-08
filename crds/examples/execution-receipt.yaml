@@ -1,0 +1,16 @@
+apiVersion: securemas.io/v1alpha1
+kind: ExecutionReceipt
+metadata:
+  name: executionreceipt-001
+spec:
+  receiptId: "28c3f41b-8a3f-4c9d-9e4f-9a8a4a2e4d50"
+  orderId: "c3e90d08-48c1-4d2b-9f3c-8f1f95a0b6b0"
+  eventId: "0c6b2c6a-0b2e-4d9a-a38b-4a6f4a7bcb5f"
+  taskId: "d9f9a9b4-7b6a-4d64-9b62-4d7f30b5d9f3"
+  agentId: "agent-f"
+  executedAt: "2025-01-01T00:01:30Z"
+  results:
+    - action: "RESTRICT_EGRESS"
+      status: "SUCCESS"
+      message: "egress restricted to allowlist"
+  auditLogRef: "s3://securemas/audit/receipt-001.log"
